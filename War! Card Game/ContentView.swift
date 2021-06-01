@@ -11,9 +11,11 @@ struct ContentView: View {
 
     
     @State private var playerCard = "back"
-    @State private var adversaryCard = "back"
+    @State private var challengerCard = "back"
     @State private var playerScore = 0
-    @State private var adversaryScore = 0
+    @State private var challengerScore = 0
+   
+   
 
     var body: some View {
             
@@ -37,16 +39,17 @@ struct ContentView: View {
             Spacer()
             //card images
             VStack{
+               
                 Spacer()
                 HStack(alignment: .center) {
                     Spacer()
                     Image(playerCard).resizable()
                             .frame(width: 200, height: 350)
                     Spacer()
-                    Image(adversaryCard).resizable()
+                    Image(challengerCard).resizable()
                         .frame(width: 200, height: 350)
                     Spacer()
-                    }
+                }
                 Spacer()
                 HStack(alignment: .center) {
                     Spacer()
@@ -64,12 +67,12 @@ struct ContentView: View {
                     Spacer()
                     //Adversary score info
                     VStack {
-                        Text("Adversary")
+                        Text("Challenger")
                             .font(.headline)
                             .fontWeight(.bold)
                             .padding(.bottom,   10.0)
                             .foregroundColor(Color(hue: 0.002, saturation: 0.592, brightness: 0.728))
-                            Text(String(adversaryScore))
+                            Text(String(challengerScore))
                                 .foregroundColor(Color(hue: 0.002, saturation: 0.592, brightness: 0.728))
                             .font(.largeTitle)
                         }
@@ -80,15 +83,30 @@ struct ContentView: View {
                 HStack(alignment: .center){
                         Spacer()
                         Button(action: {
-                        // Generate a random number between 2 and 14
-                            let playerRand = Int.random(in: 2...14)
-                            let adversaryRand = Int.random(in: 2...14)
+                            let c = Cards()
+                        // Generate a random number for each card array
+                            let playerGameDeck = c.playerStartDeck
+                            let playerRandIndex = Int.random(in: 0..<playerGameDeck.count)
+    
+                            let challengerGameDeck = c.challengerStartDeck
+                            let challengerRandIndex = Int.random(in: 0..<challengerGameDeck.count)
+                            
                         // Update the cards
-                            playerCard = "card " + String(playerRand)
-                            adversaryCard = "card " + String(adversaryRand)
+                            let playerCard = playerRandIndex
+                            let challengerCard = challengerRandIndex
                         // Update the score
+                            if playerCard(Value for Key) > challengerCard(Value for key) {
                             playerScore += 1
-                            adversaryScore += 1
+                            playerGameDeck.append[challengerCard]
+                            challengerGameDeck.remove[challengerCard]
+                            
+                            } else {
+                            if challengerCard(Value for Key) > playerCard(Value for key) {
+                            challengerScore += 1
+                            challengerGameDeck.append[playerCard]
+                            playerGameDeck.remove[playerCard]
+                            
+                            challengerScore += 1
                             }, label: {
                                 Image(systemName: "greetingcard.fill")
                                     .foregroundColor(Color(red: 0.765, green: 0.224, blue: 0.814))
