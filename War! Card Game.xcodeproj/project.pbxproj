@@ -13,6 +13,7 @@
 		D24B72B22664100B00047F7E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D24B72B12664100B00047F7E /* Preview Assets.xcassets */; };
 		D24B72BD2664100B00047F7E /* War__Card_GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24B72BC2664100B00047F7E /* War__Card_GameTests.swift */; };
 		D24B72C82664100B00047F7E /* War__Card_GameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24B72C72664100B00047F7E /* War__Card_GameUITests.swift */; };
+		D25B68CC2665AD830023CA4A /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B68CB2665AD830023CA4A /* Cards.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		D24B72C32664100B00047F7E /* War! Card GameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "War! Card GameUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D24B72C72664100B00047F7E /* War__Card_GameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = War__Card_GameUITests.swift; sourceTree = "<group>"; };
 		D24B72C92664100B00047F7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D25B68CB2665AD830023CA4A /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				D24B72AA2664100B00047F7E /* War__Card_GameApp.swift */,
 				D24B72AC2664100B00047F7E /* ContentView.swift */,
+				D25B68CB2665AD830023CA4A /* Cards.swift */,
 				D24B72AE2664100B00047F7E /* Assets.xcassets */,
 				D24B72B32664100B00047F7E /* Info.plist */,
 				D24B72B02664100B00047F7E /* Preview Content */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D25B68CC2665AD830023CA4A /* Cards.swift in Sources */,
 				D24B72AD2664100B00047F7E /* ContentView.swift in Sources */,
 				D24B72AB2664100B00047F7E /* War__Card_GameApp.swift in Sources */,
 			);
