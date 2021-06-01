@@ -85,30 +85,33 @@ struct GameView: View {
                         Spacer()
                     Button(action: {
                         // Generate a random number for each card array
-                            let playerGameDeck = playerStartDeck
-                            let playerRandIndex = Int.random(in: 0..<playerGameDeck.count)
+                            var playerGameDeck = playerStartDeck
+                            var playerCardRandom = Int.random(in: 0..<playerGameDeck.count)
     
-                            let challengerGameDeck = challengerStartDeck
-                            let challengerRandIndex = Int.random(in: 0..<challengerGameDeck.count)
+                            var challengerGameDeck = challengerStartDeck
+                            var challengerCardRandom = Int.random(in: 0..<challengerGameDeck.count)
                             
                         // Update the cards
-                            let playerCard = playerRandIndex
-                            let challengerCard = challengerRandIndex
+                        playerCard = "card " + String("\(playerCardRandom)")
+                        challengerCard = "card " + String("\(challengerCardRandom)")
                         // Update the score
-                        if playerCard.value > challengerCard.value {
+                        if playerCard(value for key("value")) > challengerCard(value for key ("value")) {
                             playerScore += 1
-                            playerGameDeck.append[challengerCard]
-                            challengerGameDeck.remove[challengerCard]
-                            
+                            playerGameDeck.append(challengerCard)
+                            // Check to remove the existing element
+                            if let challengerIndex = challengerGameDeck.firstIndex(of: "\(challengerCardRandom)") {
+                             challengerGameDeck.remove(at: challengerIndex)
+                                }
                             } else if
-                                challengerCard.value > playerCard.value {
+                                challengerCard(value for key("value")) > (value for key("value")) {
                                     challengerScore += 1
-                                    challengerGameDeck.append[playerCard]
-                                    playerGameDeck.remove[playerCard]
-                                    
-                                    challengerScore += 1
+                                challengerGameDeck.append(playerCard)
+                                // Check to remove the existing element
+                                if let playerIndex = playerGameDeck.firstIndex(of: "\(playerCardRandom)") {
+                                 playerGameDeck.remove(at: playerIndex)
+                                    }
                             }
-                                },
+                        },
                         label: {
                                 Image(systemName: "greetingcard.fill")
                                     .foregroundColor(Color(red: 0.765, green: 0.224, blue: 0.814))
@@ -116,7 +119,12 @@ struct GameView: View {
                                 .fontWeight(.bold).foregroundColor(.white).background(Color(red: 0.765, green: 0.224, blue: 0.814))
                             })
                             Spacer()
-                            Button(action: {}, label: {
+                            Button(action: {
+                                if playerScore == 200 || challengerScore == 200 {
+                                    Text("GAME OVER").fontWeight(.bold).foregroundColor(.white).background(Color(red: 0.765, green: 0.224, blue: 0.814))
+                                      
+                                }
+                            }, label: {
                             Image(systemName: "plus.square.fill")
                                 .foregroundColor(Color(red: 0.241, green: 0.508, blue: 0.245))
                                     Text("New Game")

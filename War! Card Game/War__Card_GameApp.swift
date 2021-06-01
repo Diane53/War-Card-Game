@@ -11,7 +11,7 @@ import SwiftUI
 struct War__Card_GameApp: App {
     var body: some Scene {
         WindowGroup {
-            ()
+            GameTabView()
         }
     }
 }
