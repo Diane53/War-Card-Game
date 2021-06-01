@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		D24B72AB2664100B00047F7E /* War__Card_GameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24B72AA2664100B00047F7E /* War__Card_GameApp.swift */; };
-		D24B72AD2664100B00047F7E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24B72AC2664100B00047F7E /* ContentView.swift */; };
+		D24B72AD2664100B00047F7E /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24B72AC2664100B00047F7E /* GameView.swift */; };
 		D24B72AF2664100B00047F7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D24B72AE2664100B00047F7E /* Assets.xcassets */; };
 		D24B72B22664100B00047F7E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D24B72B12664100B00047F7E /* Preview Assets.xcassets */; };
 		D24B72BD2664100B00047F7E /* War__Card_GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24B72BC2664100B00047F7E /* War__Card_GameTests.swift */; };
 		D24B72C82664100B00047F7E /* War__Card_GameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24B72C72664100B00047F7E /* War__Card_GameUITests.swift */; };
-		D25B68CC2665AD830023CA4A /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B68CB2665AD830023CA4A /* Cards.swift */; };
+		D25B68CC2665AD830023CA4A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B68CB2665AD830023CA4A /* Card.swift */; };
+		D2F0191A2666A6C100926441 /* Cards.json in Resources */ = {isa = PBXBuildFile; fileRef = D2F019192666A6C100926441 /* Cards.json */; };
+		D2F0191E2666B4E200926441 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F0191D2666B4E200926441 /* DataService.swift */; };
+		D2F019212666BB7900926441 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F019202666BB7900926441 /* CardViewModel.swift */; };
+		D2F019242666BD1400926441 /* GameTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F019232666BD1400926441 /* GameTabView.swift */; };
+		D2F019262666BEE800926441 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F019252666BEE800926441 /* AboutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +41,7 @@
 /* Begin PBXFileReference section */
 		D24B72A72664100B00047F7E /* War! Card Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "War! Card Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D24B72AA2664100B00047F7E /* War__Card_GameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = War__Card_GameApp.swift; sourceTree = "<group>"; };
-		D24B72AC2664100B00047F7E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D24B72AC2664100B00047F7E /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		D24B72AE2664100B00047F7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D24B72B12664100B00047F7E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D24B72B32664100B00047F7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,7 +51,12 @@
 		D24B72C32664100B00047F7E /* War! Card GameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "War! Card GameUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D24B72C72664100B00047F7E /* War__Card_GameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = War__Card_GameUITests.swift; sourceTree = "<group>"; };
 		D24B72C92664100B00047F7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D25B68CB2665AD830023CA4A /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
+		D25B68CB2665AD830023CA4A /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		D2F019192666A6C100926441 /* Cards.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Cards.json; sourceTree = "<group>"; };
+		D2F0191D2666B4E200926441 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		D2F019202666BB7900926441 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		D2F019232666BD1400926441 /* GameTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTabView.swift; sourceTree = "<group>"; };
+		D2F019252666BEE800926441 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				D24B72AA2664100B00047F7E /* War__Card_GameApp.swift */,
-				D24B72AC2664100B00047F7E /* ContentView.swift */,
-				D25B68CB2665AD830023CA4A /* Cards.swift */,
+				D2F019222666BCA600926441 /* Views */,
+				D2F0191B2666A85100926441 /* Data */,
 				D24B72AE2664100B00047F7E /* Assets.xcassets */,
 				D24B72B32664100B00047F7E /* Info.plist */,
 				D24B72B02664100B00047F7E /* Preview Content */,
@@ -131,6 +141,43 @@
 				D24B72C92664100B00047F7E /* Info.plist */,
 			);
 			path = "War! Card GameUITests";
+			sourceTree = "<group>";
+		};
+		D2F0191B2666A85100926441 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D2F019192666A6C100926441 /* Cards.json */,
+				D2F0191D2666B4E200926441 /* DataService.swift */,
+				D2F0191F2666BB5400926441 /* ViewModel */,
+				D2F0191C2666B42B00926441 /* Models */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D2F0191C2666B42B00926441 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D25B68CB2665AD830023CA4A /* Card.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D2F0191F2666BB5400926441 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D2F019202666BB7900926441 /* CardViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D2F019222666BCA600926441 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D24B72AC2664100B00047F7E /* GameView.swift */,
+				D2F019232666BD1400926441 /* GameTabView.swift */,
+				D2F019252666BEE800926441 /* AboutView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +285,7 @@
 			files = (
 				D24B72B22664100B00047F7E /* Preview Assets.xcassets in Resources */,
 				D24B72AF2664100B00047F7E /* Assets.xcassets in Resources */,
+				D2F0191A2666A6C100926441 /* Cards.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,9 +310,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D25B68CC2665AD830023CA4A /* Cards.swift in Sources */,
-				D24B72AD2664100B00047F7E /* ContentView.swift in Sources */,
+				D25B68CC2665AD830023CA4A /* Card.swift in Sources */,
+				D2F019262666BEE800926441 /* AboutView.swift in Sources */,
+				D24B72AD2664100B00047F7E /* GameView.swift in Sources */,
 				D24B72AB2664100B00047F7E /* War__Card_GameApp.swift in Sources */,
+				D2F0191E2666B4E200926441 /* DataService.swift in Sources */,
+				D2F019242666BD1400926441 /* GameTabView.swift in Sources */,
+				D2F019212666BB7900926441 /* CardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

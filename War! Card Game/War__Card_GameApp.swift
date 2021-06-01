@@ -2,7 +2,7 @@
 //  War__Card_GameApp.swift
 //  War! Card Game
 //
-//  Created by Xcode Server on 5/30/21.
+//  Created by Diane R. Warde on 5/30/21.
 //
 
 import SwiftUI
@@ -11,7 +11,7 @@ import SwiftUI
 struct War__Card_GameApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ()
         }
     }
 }

@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct GameView: View {
 
+    @EnvironmentObject var model:CardViewModel
     
     @State private var playerCard = "back"
     @State private var challengerCard = "back"
@@ -82,32 +83,33 @@ struct ContentView: View {
                     //Deal & New Game buttons
                 HStack(alignment: .center){
                         Spacer()
-                        Button(action: {
-                            let c = Cards()
+                    Button(action: {
                         // Generate a random number for each card array
-                            let playerGameDeck = c.playerStartDeck
+                            let playerGameDeck = playerStartDeck
                             let playerRandIndex = Int.random(in: 0..<playerGameDeck.count)
     
-                            let challengerGameDeck = c.challengerStartDeck
+                            let challengerGameDeck = challengerStartDeck
                             let challengerRandIndex = Int.random(in: 0..<challengerGameDeck.count)
                             
                         // Update the cards
                             let playerCard = playerRandIndex
                             let challengerCard = challengerRandIndex
                         // Update the score
-                            if playerCard(Value for Key) > challengerCard(Value for key) {
+                        if playerCard.value > challengerCard.value {
                             playerScore += 1
                             playerGameDeck.append[challengerCard]
                             challengerGameDeck.remove[challengerCard]
                             
-                            } else {
-                            if challengerCard(Value for Key) > playerCard(Value for key) {
-                            challengerScore += 1
-                            challengerGameDeck.append[playerCard]
-                            playerGameDeck.remove[playerCard]
-                            
-                            challengerScore += 1
-                            }, label: {
+                            } else if
+                                challengerCard.value > playerCard.value {
+                                    challengerScore += 1
+                                    challengerGameDeck.append[playerCard]
+                                    playerGameDeck.remove[playerCard]
+                                    
+                                    challengerScore += 1
+                            }
+                                },
+                        label: {
                                 Image(systemName: "greetingcard.fill")
                                     .foregroundColor(Color(red: 0.765, green: 0.224, blue: 0.814))
                                 Text("Deal")
@@ -131,8 +133,10 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        
+        GameView()
+            .environmentObject(CardViewModel())
     }
 }
