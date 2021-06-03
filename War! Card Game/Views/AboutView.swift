@@ -9,8 +9,6 @@ import SwiftUI
 
 struct AboutView: View {
     
-    @EnvironmentObject var model:CardViewModel
-    
     var body: some View {
         ZStack{
             
@@ -34,7 +32,7 @@ struct AboutView: View {
                 Spacer()
                 Text("War Card Game is a two player game: the Player is you, and the Challenger is your device.")
                 Text("Press the Deal button to deal cards.")
-                Text("Whoever has the highest card gets one point and takes both cards; the other player loses his card.")
+                Text("Whoever has the highest card gets one point and takes both cards; the other player loses their card.")
                 Text("The game ends when one player runs out of cards or one player scores 200 points.")
                 Spacer()
                 Text("©June 2021,Diane R. Warde")
@@ -46,7 +44,7 @@ struct AboutView: View {
 
 struct AboutView_Previews: PreviewProvider {
     static var previews: some View {
-        AboutView()  .environmentObject(CardViewModel())
+        AboutView()
     }
 }
 

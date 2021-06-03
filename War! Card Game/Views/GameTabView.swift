@@ -28,8 +28,7 @@ struct GameTabView: View {
                         }
                     }
             }
-            .environmentObject(CardViewModel())
-    }
+        }
 }
 
 struct GameTabView_Previews: PreviewProvider {
