@@ -15,6 +15,7 @@
 		D24B72C82664100B00047F7E /* War__Card_GameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24B72C72664100B00047F7E /* War__Card_GameUITests.swift */; };
 		D2F019242666BD1400926441 /* GameTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F019232666BD1400926441 /* GameTabView.swift */; };
 		D2F019262666BEE800926441 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F019252666BEE800926441 /* AboutView.swift */; };
+		D2F3C4392669608E001F829F /* CardSetUP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3C4382669608E001F829F /* CardSetUP.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D24B72C92664100B00047F7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2F019232666BD1400926441 /* GameTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTabView.swift; sourceTree = "<group>"; };
 		D2F019252666BEE800926441 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		D2F3C4382669608E001F829F /* CardSetUP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSetUP.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				D24B72AA2664100B00047F7E /* War__Card_GameApp.swift */,
+				D2F3C43526694D1A001F829F /* Card Model */,
 				D2F019222666BCA600926441 /* Views */,
 				D24B72AE2664100B00047F7E /* Assets.xcassets */,
 				D24B72B32664100B00047F7E /* Info.plist */,
@@ -142,6 +145,14 @@
 				D2F019252666BEE800926441 /* AboutView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		D2F3C43526694D1A001F829F /* Card Model */ = {
+			isa = PBXGroup;
+			children = (
+				D2F3C4382669608E001F829F /* CardSetUP.swift */,
+			);
+			path = "Card Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2F3C4392669608E001F829F /* CardSetUP.swift in Sources */,
 				D2F019262666BEE800926441 /* AboutView.swift in Sources */,
 				D24B72AD2664100B00047F7E /* GameView.swift in Sources */,
 				D24B72AB2664100B00047F7E /* War__Card_GameApp.swift in Sources */,
