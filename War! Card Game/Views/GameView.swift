@@ -9,13 +9,15 @@ import SwiftUI
 
 struct GameView: View {
  
-    @State private var playerCard = "back"
-    @State private var challengerCard = "back"
-    @State private var playerScore = 0
-    @State private var challengerScore = 0
-    @State var playerGameDeck:[String:Int]
-    @State var challengerGameDeck:[String:Int]
-        
+    @State var playerCard = "back"
+    @State var challengerCard = "back"
+    @State var playerGameDeck:[String]
+    @State var challengerGameDeck:[String]
+    @State var playerScore = 0
+    @State var challengerScore = 0
+    
+    @EnvironmentObject var model:CardModel
+    
     var body: some View {
             
         VStack(alignment: .center) {
@@ -60,8 +62,8 @@ struct GameView: View {
                             .foregroundColor(Color(hue: 0.565, saturation: 0.716, brightness: 0.667))
                             .padding(.bottom,   10.0)
                         Text(String(playerScore))
-                                .font(.largeTitle)
-                            .foregroundColor(Color(hue: 0.565, saturation: 0.716, brightness: 0.667))
+                            .font(.largeTitle)
+                                .foregroundColor(Color(hue: 0.565, saturation: 0.716, brightness: 0.667))
                     }
                     Spacer()
                     //Adversary score info
@@ -78,33 +80,79 @@ struct GameView: View {
                         Spacer()
                     }
                 Spacer()
+                
+                
                     //Deal & New Game buttons
                 HStack(alignment: .center){
                         Spacer()
                     Button(action: {
-                        updateDecks()
-                        }
-                        // Update the score
-                            if playerCard() > challengerCard() {
-                            playerScore += 1
-                        } else if playerCard() < challengerCard() {
-                                challengerScore += 1
-                        }
-                        //check if decks are empty
-                            if playerGameDeck.isEmpty {
-                                Text("Player has no cards left. Challenger wins!")
-                            } else if challengerGameDeck.isEmpty {
-                                Text("Challenger has no cards left. Player wins!")
-                                    }
-                        //check if a someone has reach 200 points
-                            if playerScore == 200{
-                                Text("Player wins with a score of 200 points!")
-                            } else if challengerScore == 200 {
-                                Text("Challenger wins with a score of 200 points!")
-                                }
+                        let model = CardModel()
+                        var playerGameDeck = model.playerStartDeck
+                        var challengerGameDeck = model.challengerStartDeck
+                       
+                        //choose a random card for each person
+                        func randomCard(){
+                            let playerCardRandom = Int.random(in: 1...52)
+                            let challengerCardRandom = Int.random(in: 1...52)
 
-                        },
+                            
+                            playerCard = "card" + String("\(playerCardRandom)")
+                            challengerCard = "card" + String("\(challengerCardRandom)")
+                        }
                         
+                        //check if cards are in respective decks
+                        if playerGameDeck.contains("\(playerCard)") || challengerGameDeck.contains("\(challengerCard)") {
+                            updateDecks()
+                            updateScores()
+                        } else {
+                            randomCard()
+                        }
+                        
+                        //update decks
+                        func updateDecks() {
+                        if playerCard > challengerCard {
+                            if let index = challengerGameDeck.firstIndex(of: ("\(challengerCard)"))
+                                {
+                                    challengerGameDeck.remove(at: index)
+                                }
+                            }
+                        else if challengerCard > playerCard {
+                            challengerGameDeck.append(playerCard)
+                            if let index = playerGameDeck.firstIndex(of: ("\(playerCard)"))
+                                {
+                                playerGameDeck.remove(at: index)
+                                }
+                            }
+                        }
+                        //update Scores
+                        func updateScores() {
+                            if playerCard > challengerCard {
+                                playerScore += 1
+                            } else if playerCard < challengerCard {
+                            challengerScore += 1
+                            }
+                        }
+                    //check if decks are empty
+                    if playerGameDeck.isEmpty {
+                        Text("Player has no cards left. Challenger wins!")
+                            .foregroundColor(.blue)
+                            .font(.largeTitle)
+                    } else if challengerGameDeck.isEmpty {
+                        Text("Challenger has no cards left. Player wins!")
+                            .foregroundColor(.red)
+                            .font(.largeTitle)
+                    }
+                    //check if a someone has reached 100 points
+                        if playerScore == 100{
+                            Text("Player wins with a score of 100 points!")
+                                .foregroundColor(.blue)
+                                .font(.largeTitle)
+                        } else if challengerScore == 100 {
+                            Text("Challenger wins with a score of 200 points!")
+                                .foregroundColor(.red)
+                                .font(.largeTitle)
+                        }
+                },
                     label: {
                             Image(systemName: "greetingcard.fill")
                                 .foregroundColor(Color(red: 0.765, green: 0.224, blue: 0.814))
@@ -113,9 +161,9 @@ struct GameView: View {
                         })
                             Spacer()
                             Button(action: {
-                                playerGameDeck = ["Card 1":2]
+                                playerGameDeck = []
                                 playerScore = 0
-                                challengerGameDeck = ["Card 3":2]
+                                challengerGameDeck = []
                                 challengerScore = 0
                             }, label: {
                             Image(systemName: "plus.square.fill")
@@ -132,9 +180,12 @@ struct GameView: View {
             Spacer()
         }
     }
+}
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView()
+       
+        GameView (playerGameDeck: [""], challengerGameDeck: [""]).environmentObject(CardModel())
     }
 }
+

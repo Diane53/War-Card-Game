@@ -12,7 +12,7 @@ struct GameTabView: View {
             
             TabView {
                 
-                GameView()
+                GameView(playerGameDeck: [String], challengerGameDeck: [String])
                     .tabItem {
                         VStack {
                             Image(systemName: "circle.fill.square.fill")
@@ -28,6 +28,7 @@ struct GameTabView: View {
                         }
                     }
             }
+            .environmentObject(CardViewModel())
         }
 }
 
